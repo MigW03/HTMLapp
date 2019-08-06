@@ -1,0 +1,148 @@
+<doctype!>
+<html lang="pt-br">
+<head>
+	<title>Conversões</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#div1{
+		padding: 4px 15px 4px 15px;    <!-- respectivamente: top, right, bottom, left-->;
+		border: 2px solid black;
+		}
+		
+		#homepagebutton{
+		height:25px;
+		border: none;
+		background: none;
+		padding:none;
+		}
+		
+		#timebutton{
+		border-bottom: 2px solid red;
+		}
+		
+		.navButton{
+		height: 25px;
+		}
+		
+		#inputTime{
+		border: solid 2px black;
+		padding: 3px;
+		}
+		#conversaoAtual{
+		position: fixed;
+		left: 0;
+		top: 127;
+		margin: 3px;
+		padding: 1px;
+		border: solid 1px black;
+		}
+		
+		.dropdown{
+		position: relative;
+		display: inline-block;
+		margin: 4px;
+		border: solid 1px black;
+		}
+
+		.dropdown-content{
+		display: none;
+		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content button{
+		color: black;
+		border: none;
+		min-width: 150px;
+		background-color: white;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content button:hover{
+		background-color: darkGrey;
+		}
+		
+		.dropdown:hover .dropdown-content{
+		display: block;
+		}
+	</style>
+</head>
+<body>
+	<script src="funcoes_site.js">
+	</script>
+	
+	<div align="center" id="div1">
+		<button type="button" value="home" name="home" id="homepagebutton" class="navButtton" onclick="window.location.href='conversoes_home.html'"><img src="https://cdn2.iconfinder.com/data/icons/basics-1/100/Home-512.png" style="width:20px;" alt="Página inicial"></button>
+		<button type="button" value="velocidade" name="velocidade" id="velbutton" class="navButton" onclick="window.location.href='conversoes_velocidade.html'">Velocidade</button>
+		<button type="button" value="temperatura" name="temperatura" id="tempbutton" class="navButton" onclick="window.location.href='conversoes_temperatura.html'">Temperatura</button>
+		<button type="button" value="tempo" name="tempo" id="timebutton" class="navButton" onclick="window.location.href='conversoes_tempo.html'">Tempo</button>
+		<button type="button" value="massa" name="massa" id="massabutton" class="navbutton" onclick="window.location.href='conversoes_massa.html'">Massa</button>
+	</div>
+	
+	<div align="center">
+	<h3>Digite o tempo que deseja converter no campo abaixo, a unidade de tempo será determinada automaticamente na escolha da conversão</h3>
+	</div>
+	
+	<br/>
+	<div align="center" id="div2">
+	<input type="text" size="30" id="inputTime" placeholder="Digite aqui o tempo de será convertido"/>
+	<br/><br/>
+	<p id="conversaoAtual">Conversão Atual</p>
+		<div class="dropdown">
+		<button>Hora(h)</button>
+			<div class="dropdown-content">
+				<button type="button" value="H_M" name="H_M" id="H_MButton" onclick="H_M()">h para min</button>
+				<button type="button" value="H_S" name="H_S" id="H_SButton" onclick="H_S()">h para s</button>
+				<button type="button" value="H_D" name="H_D" id="H_DButton" onclick="H_D()">h para Dia</button>
+				<button type="button" value="H_A" name="H_A" id="H_AButtob" onclick="H_A()">h para Ano</button>
+			</div>
+		</div>
+
+		<div class="dropdown">
+		<button>Minuto(min)</button>
+			<div class="dropdown-content">
+				<button type="button" value="M_H" name="M_H" id="M_HButton" onclick="M_H()">min para h</button>
+				<button type="button" value="M_S" name="M_S" id="M_SButton" onclick="M_S()">min para s</button>
+				<button type="button" value="M_D" name="M_D" id="M_DButton" onclick="M_D()">min para Dia</button>
+				<button type="button" value="M_A" name="M_A" id="M_AButton" onclick="M_A()">min para Ano</button>
+			</div>
+		</div>
+
+		<div class="dropdown">
+		<button>Segundo(s)</button>
+			<div class="dropdown-content">
+				<button type="button" value="S_H" name="S_H" id="S_HButton" onclick="S_H()">s para h</button>
+				<button type="button" value="S_M" name="S_M" id="S_MButton" onclick="S_M()">s para min</button>
+				<button type="button" value="S_D" name="S_D" id="S_DButton" onclick="S_D()">s para Dia</button>
+				<button type="button" value="S_A" name="S_A" id="S_AButton" onclick="S_A()">s para Ano</button>
+			</div>
+		</div>
+
+		<div class="dropdown">
+		<button>Dia</button>
+			<div class="dropdown-content">
+				<button type="button" value="D_H" name="D_H" id="D_HButton" onclick="D_H()">Dia para h</button>
+				<button type="button" value="D_M" name="D_M" id="D_MButton" onclick="D_M()">Dia para min</button>
+				<button type="button" value="D_S" name="D_S" id="D_SButton" onclick="D_S()">Dia para s</button>
+				<button type="button" value="D_A" name="D_A" id="D_AButton" onclick="D_A()">Dia para Ano</button>
+			</div>
+		</div>
+
+		<div class="dropdown">
+		<button>Ano</button>
+			<div class="dropdown-content">
+				<button type="button" value="A_H" name="A_H" id="A_HButton" onclick="A_H()">Ano para h</button>
+				<button type="button" value="A_M" name="A_M" id="A_MButton" onclick="A_M()">Ano para min</button>
+				<button type="button" value="A_S" name="A_S" id="A_SButton" onclick="A_S()">Ano para s</button>
+				<button type="button" value="A_D" name="A_D" id="A_DButton" onclick="A_D()">Ano para Dia</button>
+			</div>
+		</div>
+	<br/><br/><br/>
+	<h3 style="color: green; font-size: 35px;"><ins id="resultado">RESULTADO AQUI</ins></h3>
+	</div>
+</body>
+<html>

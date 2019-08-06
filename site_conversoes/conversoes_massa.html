@@ -1,0 +1,127 @@
+<doctype!>
+<html lang="pt-br">
+<head>
+	<title>Conversões</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#div1{
+		padding: 4px 15px 4px 15px;    <!-- respectivamente: top, right, bottom, left-->;
+		border: 2px solid black;
+		}
+		#homepagebutton{
+		height:25px;
+		border: none;
+		background: none;
+		padding:none;
+		}
+		#massabutton{
+		border-bottom: 2px solid red;
+		}
+		.navButton{
+		height: 25px;
+		}
+		#inputMassa{
+		border: 2px solid black;
+		padding: 3px;
+		}
+		#conversaoAtual{
+		position: fixed;
+		left: 0;
+		top: 127;
+		margin: 3px;
+		padding: 1px;
+		border: solid 1px black;
+		}
+		
+		.dropdown{
+		position: relative;
+		display: inline-block;
+		margin: 4px;
+		border: solid 1px black;
+		}
+
+		.dropdown-content{
+		display: none;
+		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content button{
+		color: black;
+		border: none;
+		min-width: 170px;
+		background-color: white;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content button:hover{
+		background-color: darkGrey;
+		}
+		
+		.dropdown:hover .dropdown-content{
+		display: block;
+		}
+	</style>
+</head>
+<body>	
+	<script src="funcoes_site.js">
+	</script>
+	<div align="center" id="div1">
+		<button type="button" value="home" name="home" id="homepagebutton" class="navButtton" onclick="window.location.href='conversoes_home.html'"><img src="https://cdn2.iconfinder.com/data/icons/basics-1/100/Home-512.png" style="width:20px;" alt="Página inicial"></button>
+		<button type="button" value="velocidade" name="velocidade" id="velbutton" class="navButton" onclick="window.location.href='conversoes_velocidade.html'">Velocidade</button>
+		<button type="button" value="temperatura" name="temperatura" id="tempbutton" class="navButton" onclick="window.location.href='conversoes_temperatura.html'">Temperatura</button>
+		<button type="button" value="tempo" name="tempo" id="timebutton" class="navButton" onclick="window.location.href='conversoes_tempo.html'">Tempo</button>
+		<button type="button" value="massa" name="massa" id="massabutton" class="navbutton" onclick="window.location.href='conversoes_massa.html'">Massa</button>
+	</div>
+
+	<div align="center">
+	<h3>Digite a massa a ser convertida no campo abaixo, então, selecione a conversão desejada, a unidade será automaticamente selecionada</h3>
+	</div>
+
+	<br/>
+	
+	<div align="center" id="div2">
+	<input type="text" placeholder="Digite a massa" id="inputMassa" size="30"/>
+	<br/><br/>
+	<p id="conversaoAtual">Conversão Atual</p>
+		<div class="dropdown">
+			<button>Quilogramas(Kg)</button>
+			<div class="dropdown-content">
+				<button type="button" value="kG_G" name="kG_G" id="kG_GButton" onclick="kG_G()">Kg para g</button>
+				<button type="button" value="kG_T" name="kG_T" id="kG_TButton" onclick="kG_T()">Kg para Tonelada</button>
+				<button type="button" value="kG_L" name="kG_L" id="kG_LButton" onclick="kG_L()">Kg para Libras</button>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button>Gramas(g)</button>
+			<div class="dropdown-content">
+				<button type="button" value="G_Kg" name="G_Kg" id="G_KgButton" onclick="G_Kg()">g para Kg</button>
+				<button type="button" value="G_T" name="G_T" id="G_TButton" onclick="G_T()">g para Tonelada</button>
+				<button type="button" value="G_L" name="G_L" id="G_LButton" onclick="G_L()">g para Libra</button>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button>Toneladas</button>
+			<div class="dropdown-content">
+				<button type="button" value="T_Kg" name="T_Kg" id="T_KgButton" onclick="T_Kg()">Tonelada para kg</button>
+				<button type="button" value="T_G" name="T_G" id="T_GButton" onclick="T_G()">Tonelada para g</button>
+				<button type="button" value="T_L" name="T_L" id="T_LButton" onclick="T_L()">Tonelada para Libra</button>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button>Libras/Pounds</button>
+			<div class="dropdown-content">
+				<button type="button" value="L_Kg" name="L_Kg" id="L_KgButton" onclick="L_Kg()">Libra para Kg</button>
+				<button type="button" value="L_G" name="L_G" id="L_GButton" onclick="L_G()">Libra para g</button>
+				<button type="button" value="L_T" name="L_T" id="L_TButton" onclick="L_T()">Libra para Tonelada</button>
+			</div>
+		</div>
+	<br/><br/><br/>
+	<h2 style="color: green; font-size: 35px;"><ins id="resultado">RESULTADO AQUI</ins></h2>
+	</div>
+</body>
+<html>

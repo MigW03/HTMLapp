@@ -1,0 +1,76 @@
+<doctype!>
+<html lang="pt-br">
+<head>
+	<title>Conversões</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#div1{
+		padding: 4px 15px 4px 15px;    <!-- respectivamente: top, right, bottom, left-->;
+		border: 2px solid black;
+		}
+		
+		#homepagebutton{
+		height:25px;
+		border: none;
+		background: none;
+		padding:none;
+		}
+		
+		#velbutton{
+		border-bottom: 2px solid Red;
+		}
+		.navButton{
+		height: 25px;
+		}
+		
+		#kmH-mSButton, #mS-kmHButton{
+		font-size: 17px;
+		margin: 6px;
+		padding: 4px;
+		}
+		
+		#inputVel{
+		border: solid 2px black;
+		padding: 3px;
+		}
+		
+		#conversaoAtual{
+		position: fixed;
+		left: 0;
+		top: 127;
+		margin: 3px;
+		padding: 1px;
+		border: solid 1px black;
+		}
+	</style>
+</head>
+<body>
+	<script src="funcoes_site.js">
+	</script>
+	
+	<div align="center" id="div1">
+		<button type="button" value="home" name="home" id="homepagebutton" class="navButtton" onclick="window.location.href='conversoes_home.html'"><img src="https://cdn2.iconfinder.com/data/icons/basics-1/100/Home-512.png" style="width:20px;" alt="Página inicial"></button>
+		<button type="button" value="velocidade" name="velocidade" id="velbutton" class="navButton" onclick="window.location.href='conversoes_velocidade.html'">Velocidade</button>
+		<button type="button" value="temperatura" name="temperatura" id="tempbutton" class="navButton" onclick="window.location.href='conversoes_temperatura.html'">Temperatura</button>
+		<button type="button" value="tempo" name="tempo" id="timebutton" class="navButton" onclick="window.location.href='conversoes_tempo.html'">Tempo</button>
+		<button type="button" value="massa" name="massa" id="massabutton" class="navbutton" onclick="window.location.href='conversoes_massa.html'">Massa</button>
+	</div>
+	
+	<div align="center">
+	<h3>Digite o valor que deseja converter, depois, escolha o tipo de conversão que será realizada, a medida convertida será automaticamente definida</h3>
+	</div>
+	
+	<div align="center" id="div2">
+	<br/>
+	<input type="text" id="inputVel" size="30" placeholder="Digite aqui o valor que será convertido"/>
+	<br/><br/>
+	<p id="conversaoAtual">Conversão Atual</p>
+	<button type="button" value="kmH_mS" name="kmH_mS" id="kmH_mSButton" onclick="kmH_mS()">Km/h pra m/s</button>
+	<button type="button" value="mS_kmH" name="mS_kmH" id="mS_kmHButton" onclick="mS_kmH()">m/s para km/h</button><br/>
+	<br/><br/>
+	<h2 style="color: green; font-size: 35px;"><ins id="resultado">RESULTADO AQUI</ins></h2>
+	</div>
+	
+</body>
+<html>

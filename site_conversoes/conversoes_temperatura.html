@@ -1,0 +1,123 @@
+<doctype!>
+<html lang="pt-br">
+<head>
+	<title>Conversões</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		#div1{
+		padding: 4px 15px 4px 15px;    <!-- respectivamente: top, right, bottom, left-->;
+		border: 2px solid black;
+		}
+		
+		#homepagebutton{
+		height:25px;
+		border: none;
+		background: none;
+		padding:none;
+		}
+		
+		#tempbutton{
+		border-bottom: 2px solid red;
+		}
+		
+		.navButton{
+		height: 25px;
+		}
+		
+		#inputTemp{
+		border: solid 2px black;
+		padding: 3px;
+		}
+		
+		#conversaoAtual{
+		position: fixed;
+		left: 0;
+		top: 127;
+		margin: 3px;
+		padding: 1px;
+		border: solid 1px black;
+		}
+		
+		.dropdownC, .dropdownF, .dropdownK {
+		position: relative;
+		display: inline-block;
+		margin: 4px;
+		border: solid 1px black;
+		}
+
+		.dropdown-contentC, .dropdown-contentF, .dropdown-contentK{
+		display: none;
+		position: absolute;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-contentC button, .dropdown-contentF button, .dropdown-contentK button{
+		color: black;
+		border: none;
+		min-width: 150px;
+		background-color: white;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-contentC button:hover, .dropdown-contentF button:hover, .dropdown-contentK button:hover{
+		background-color: darkGrey;
+		}
+		
+		.dropdownC:hover .dropdown-contentC, .dropdownF:hover .dropdown-contentF, .dropdownK:hover .dropdown-contentK{
+		display: block;
+		}
+	</style>
+</head>
+<body>
+	<script src="funcoes_site.js">
+	</script>
+	
+	<div align="center" id="div1">
+		<button type="button" value="home" name="home" id="homepagebutton" class="navButtton" onclick="window.location.href='conversoes_home.html'"><img src="https://cdn2.iconfinder.com/data/icons/basics-1/100/Home-512.png" style="width:20px;" alt="Página inicial"></button>
+		<button type="button" value="velocidade" name="velocidade" id="velbutton" class="navButton" onclick="window.location.href='conversoes_velocidade.html'">Velocidade</button>
+		<button type="button" value="temperatura" name="temperatura" id="tempbutton" class="navButton" onclick="window.location.href='conversoes_temperatura.html'">Temperatura</button>
+		<button type="button" value="tempo" name="tempo" id="timebutton" class="navButton" onclick="window.location.href='conversoes_tempo.html'">Tempo</button>
+		<button type="button" value="massa" name="massa" id="massabutton" class="navbutton" onclick="window.location.href='conversoes_massa.html'">Massa</button>
+	</div>
+	
+	<div align="center">
+	<h3>Digite a temperatura que deseja converte no campo abaixo, entao escolha a conversão baseada na unidade desejada</h3>
+	</div>
+	<br/>
+	
+	<div align="center" id="div2">
+	<input type="text" id="inputTemp" size="30" placeholder="Digite a temperatura"/>
+	<br/><br/>
+	<p id="conversaoAtual">Conversão Atual</p>
+		<div class="dropdownC">
+			<button class="dropdownbtnC">°C(graus Celsius)</button>
+			<div class="dropdown-contentC">
+				<button type="button" value="C_F" name="C_F" id="C_FButton" onclick="gC_gF()">°C para °F</button>
+				<button type="button" value="C_K" name="C_K" id="C_KButton" onclick="gC_K()">°C para K</button>
+			</div>
+		</div>
+		<div class="dropdownF">
+			<button>°F(graus Fahrenheit)</button>
+			<div class="dropdown-contentF">
+				<button type="button" value="F_C" name="F_C" id="F_CButton" onclick="gF_gC()">°F para °C</button>
+				<button type="button" value="F_K" name="F_K" id="F_KButton" onclick="gF_K()">°F para K</button>
+			</div>
+		</div>
+		<div class="dropdownK">
+			<button>K(Kelvin)</button>
+			<div class="dropdown-contentK">
+				<button type="button" value="K_C" name="K_C" id="K_CButton" onclick="K_gC()">K para °C</button>
+				<button type="button" value="K_F" name="K_F" id="K_FButton" onclick="K_gF()">K para °F</button>
+			</div>
+		</div>
+	<br/><br/><br/>
+	<h2 style="color: green;font-size: 35px;"><ins id="resultado">RESULTADO AQUI</ins></h2>
+	</div>
+
+	
+</body>
+<html>
